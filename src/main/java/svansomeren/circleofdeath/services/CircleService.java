@@ -3,9 +3,12 @@ package svansomeren.circleofdeath.services;
 import svansomeren.circleofdeath.models.Card;
 import svansomeren.circleofdeath.models.Deck;
 
+import java.util.List;
+
 public class CircleService {
 
     private Deck deck;
+    private List<Card> cardHistory;
 
     public CircleService(){
         deck = new Deck();
@@ -15,7 +18,9 @@ public class CircleService {
         deck.fillDeck();
     }
 
-    public Card pickCard(){
-        return deck.getCard();
+    public List<Card> pickCard(){
+        Card card = deck.getCard();
+        cardHistory.add(card);
+        return cardHistory;
     }
 }

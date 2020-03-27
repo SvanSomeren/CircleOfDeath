@@ -11,6 +11,8 @@ import svansomeren.circleofdeath.models.Card;
 import svansomeren.circleofdeath.models.Deck;
 import svansomeren.circleofdeath.services.CircleService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/circle")
 public class CircleController {
@@ -28,7 +30,7 @@ public class CircleController {
     }
 
     @GetMapping(path = "/")
-    public ResponseEntity<Card> pickCard(){
+    public ResponseEntity<List<Card>> pickCard(){
         return ResponseEntity.accepted().body(circleService.pickCard());
     }
 }
