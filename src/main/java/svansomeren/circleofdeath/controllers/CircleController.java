@@ -31,6 +31,11 @@ public class CircleController {
 
     @GetMapping(path = "/")
     public ResponseEntity<List<Card>> pickCard(){
-        return ResponseEntity.accepted().body(circleService.pickCard());
+        try{
+            return ResponseEntity.accepted().body(circleService.pickCard());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }

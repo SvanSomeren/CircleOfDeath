@@ -36,7 +36,7 @@ public class Deck {
         }
     }
 
-    public Card getCard(){
+    public Card getCard() throws Exception{
         Random random = new Random();
         int cardIndex = random.nextInt(cards.size());
         Card card = cards.get(cardIndex);
