@@ -20,9 +20,7 @@ public class CircleService {
         deck.fillDeck();
     }
 
-    public List<Card> pickCard() throws Exception{
-        Card card = deck.getCard();
-        cardHistory.add(card);
-        return cardHistory;
+    public Card pickCard() throws Exception{
+        return deck.getCard();
     }
 }

@@ -29,7 +29,7 @@ public class CircleController {
 
     @CrossOrigin
     @GetMapping(path = "/")
-    public ResponseEntity<List<Card>> pickCard(){
+    public ResponseEntity<Card> pickCard(){
         try{
             return ResponseEntity.accepted().body(circleService.pickCard());
         }catch (Exception e){
