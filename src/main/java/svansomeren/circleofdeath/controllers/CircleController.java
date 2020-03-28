@@ -3,10 +3,7 @@ package svansomeren.circleofdeath.controllers;
 
 import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import svansomeren.circleofdeath.models.Card;
 import svansomeren.circleofdeath.models.Deck;
 import svansomeren.circleofdeath.services.CircleService;
@@ -23,12 +20,14 @@ public class CircleController {
         circleService = new CircleService();
     }
 
+    @CrossOrigin
     @PostMapping(path = "/start")
     public ResponseEntity<?> startGame(){
         circleService.startGame();
         return ResponseEntity.accepted().body("Game Started");
     }
 
+    @CrossOrigin
     @GetMapping(path = "/")
     public ResponseEntity<List<Card>> pickCard(){
         try{

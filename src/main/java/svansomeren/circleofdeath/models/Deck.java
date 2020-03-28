@@ -19,6 +19,7 @@ public class Deck {
     }
 
     public void fillDeck(){
+        cards.clear();
         for(int t = 0; t < 4; t++){
             cards.add(new Card(types.get(t), "2", "2 Adjes"));
             cards.add(new Card(types.get(t), "3", "Adje links"));
