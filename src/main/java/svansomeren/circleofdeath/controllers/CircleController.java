@@ -2,6 +2,7 @@ package svansomeren.circleofdeath.controllers;
 
 
 import org.apache.coyote.Response;
+import org.json.simple.JSONObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import svansomeren.circleofdeath.models.Card;
@@ -24,7 +25,7 @@ public class CircleController {
     @PostMapping(path = "/start")
     public ResponseEntity<?> startGame(){
         circleService.startGame();
-        return ResponseEntity.accepted().body(new String("Game Started"));
+        return ResponseEntity.accepted().body(new JSONObject().put("status", "Game Started :)"));
     }
 
     @CrossOrigin
