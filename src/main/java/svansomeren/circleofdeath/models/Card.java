@@ -4,6 +4,7 @@ public class Card {
     private String type;
     private String number;
     private String rule;
+    private boolean selected = false;
 
     public Card(){
 
@@ -37,5 +38,13 @@ public class Card {
 
     public void setRule(String rule) {
         this.rule = rule;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }
