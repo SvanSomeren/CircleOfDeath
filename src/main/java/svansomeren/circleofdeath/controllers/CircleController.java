@@ -14,7 +14,7 @@ import svansomeren.circleofdeath.services.CircleService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/circle")
+@RequestMapping("/v1/circle")
 public class CircleController {
 
     private CircleService circleService;
