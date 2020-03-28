@@ -44,4 +44,8 @@ public class Deck {
         cards.remove(cardIndex);
         return card;
     }
+
+    public List<Card> getCards() {
+        return cards;
+    }
 }

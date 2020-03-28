@@ -4,6 +4,7 @@ import svansomeren.circleofdeath.models.Card;
 import svansomeren.circleofdeath.models.Deck;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CircleService {
@@ -16,8 +17,11 @@ public class CircleService {
         cardHistory = new ArrayList<>();
     }
 
-    public void startGame(){
+    public List<Card> startGame(){
         deck.fillDeck();
+        List<Card> cards = deck.getCards();
+        Collections.shuffle(cards);
+        return cards;
     }
 
     public Card pickCard() throws Exception{
