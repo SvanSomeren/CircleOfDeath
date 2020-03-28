@@ -25,7 +25,9 @@ public class CircleController {
     @PostMapping(path = "/start")
     public ResponseEntity<?> startGame(){
         circleService.startGame();
-        return ResponseEntity.accepted().body(new JSONObject().put("status", "Game Started :)"));
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("status", "Game Started :)");
+        return ResponseEntity.accepted().body(jsonObject);
     }
 
     @CrossOrigin
